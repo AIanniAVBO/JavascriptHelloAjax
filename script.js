@@ -24,6 +24,8 @@ function onAllLoaded(event) {
 		//Associa un evento che si attiva al click del mouse e che richiama la funzione tdClicked
 		allTDs[i].addEventListener("click", tdClicked);
 	}
+	//Ricerca il tasto resetButton e associa al click la funzione resetText
+	document.getElementById("resetButton").addEventListener("click", resetText);
 }
 
 //Funzione da chiamare quando viene premuto su un TD
@@ -33,4 +35,10 @@ function tdClicked(event) {
 	//Lo concatena con il testo contenuto dentro demo facendo in modo che venga
 	//	separato da uno spazio
 	demo.innerText = [demo.innerText, cellText].join(" ");
+}
+
+//Funzione che effettua imposta un testo vuoto dentro demo
+function resetText() {
+	//Imposta un testo vuoto dentro demo
+	demo.innerText = "";
 }
