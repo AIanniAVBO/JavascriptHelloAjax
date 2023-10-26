@@ -20,18 +20,10 @@ function onAllLoaded(event) {
 	
 	//Ricerca la table all'interno del DOM e la salva nella variabile creata in precedenza
 	table = document.getElementById("wordsTable");
-	//Ottiene un array con dentro tutti i figli di table aventi il come tag td
-	let allTDs = table.getElementsByTagName('td');
-	//Stampa tutti i td
-	console.log(allTDs);
 	
 	//Salva il paragrafo con ID demo per fare in modo di poterlo modificare più avanti nel codice
 	demo = document.getElementById("demo");
-	//Per ogni elemento contenuto in allTDs
-	for (let i = 0; i < allTDs.length; ++i) {
-		//Associa un evento che si attiva al click del mouse e che richiama la funzione tdClicked
-		allTDs[i].addEventListener("click", tdClicked);
-	}
+	
 	//Ricerca il tasto resetButton e associa al click la funzione resetText
 	document.getElementById("resetButton").addEventListener("click", resetText);
 }
