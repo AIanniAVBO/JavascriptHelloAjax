@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", onAllLoaded);
 var table;
 //Crea una variabile globale, in cui inserirà il paragrafo (p) con id demo
 var demo;
+
+//Crea una variabile costante, che non può essere alterata, per rappresentare il numero di righe
+const rows = 3;
+//Crea una variabile costante, che non può essere alterata, per rappresentare il numero di colonne
+const cols = 3;
+//Crea un array che contiene tutte le stringhe che prima erano nella tabella
+const words = ["Ciao", "come", "stai", "Tutto", "bene", "grazie", "Mi", "fa", "piacere"];
+
 //Definizione di una funzione che prende in input un argomento
 function onAllLoaded(event) {
 	//Stampa in console un messaggio
