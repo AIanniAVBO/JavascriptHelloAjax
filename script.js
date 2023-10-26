@@ -10,8 +10,6 @@ var demo;
 const rows = 3;
 //Crea una variabile costante, che non può essere alterata, per rappresentare il numero di colonne
 const cols = 3;
-//Crea un array che contiene tutte le stringhe che prima erano nella tabella
-const words = ["Ciao", "come", "stai", "Tutto", "bene", "grazie", "Mi", "fa", "piacere"];
 
 //Definizione di una funzione che prende in input un argomento
 function onAllLoaded(event) {
