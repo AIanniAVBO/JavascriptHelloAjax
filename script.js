@@ -27,9 +27,19 @@ function onAllLoaded(event) {
 	//Ricerca il tasto resetButton e associa al click la funzione resetText
 	document.getElementById("resetButton").addEventListener("click", resetText);
 	
-	//Richiama la funzione che compone dinamicamente la tabella a partire dalle
-	//	dimensioni impostate all'inizio e dalle parole contenuto nell'array words
-	composeTable(rows, cols, words);
+	//Crea una richiesta HTTP
+	var xhttp = new XMLHttpRequest();
+	//Indica che al termine della richiesta deve chiamare la funzione requestDone
+	xhttp.onreadystatechange = requestDone;
+	//Indica che vuole eseguire una richiesta GET all'URL dell'API dove passa
+	//	come parametri (dopo il ?) la lingua italiana (lang=it) e il numero di parole
+	//	che vuole in output (in questo caso righe X colonne)
+	//	Il true alla fine significa che la richiesta è asincrona, quindi non
+	//	blocca l'esecuzione, ma viene eseguita in un altro thread
+	xhttp.open("GET", "https://random-word-api.herokuapp.com/word?lang=it&number=" + (rows * cols), true);
+	//Invia la richiesta al server HTTP, quando la risposta sarà pronta 
+	//	verrà chiamata la funzione requestDone, come impostato in precedenza
+	xhttp.send();
 }
 
 //Funzione da chiamare quando viene premuto su un TD
