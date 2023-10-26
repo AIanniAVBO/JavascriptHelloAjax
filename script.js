@@ -19,6 +19,11 @@ function onAllLoaded(event) {
 	
 	//Salva il paragrafo con ID demo per fare in modo di poterlo modificare più avanti nel codice
 	demo = document.getElementById("demo");
+	//Per ogni elemento contenuto in allTDs
+	for (let i = 0; i < allTDs.length; ++i) {
+		//Associa un evento che si attiva al click del mouse e che richiama la funzione tdClicked
+		allTDs[i].addEventListener("click", tdClicked);
+	}
 }
 
 //Funzione da chiamare quando viene premuto su un TD
