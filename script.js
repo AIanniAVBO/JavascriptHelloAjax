@@ -76,3 +76,18 @@ function composeTable(rows, cols, wordsArray) {
 		}
 	}
 }
+
+//Funzione richiama al termine di una richiesta HTTP, in argomento viene
+//	passata la richiesta HTTP
+function requestDone(httpRequest) {
+	//Se la richiesta è completata (stato 4) e la risposta ha restituito
+	//	il codice di stato 200 OK
+	if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+		//Viene effettuato il parsing della risposta
+		//	(ci si aspetta un array contenente rows * cols parole)
+		const wordsArray = JSON.parse(httpRequest.responseText);
+		//Viene chiamata la funzione per creare le righe e le celle
+		//	della tabella scritta in precedenza
+		composeTable(rows, cols, wordsArray);
+	} 
+}
