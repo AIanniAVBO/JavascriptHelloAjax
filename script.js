@@ -20,3 +20,12 @@ function onAllLoaded(event) {
 	//Salva il paragrafo con ID demo per fare in modo di poterlo modificare più avanti nel codice
 	demo = document.getElementById("demo");
 }
+
+//Funzione da chiamare quando viene premuto su un TD
+function tdClicked(event) {
+	//Estrae il testo da TD
+	let cellText = event.srcElement.innerText;
+	//Lo concatena con il testo contenuto dentro demo facendo in modo che venga
+	//	separato da uno spazio
+	demo.innerText = [demo.innerText, cellText].join(" ");
+}
