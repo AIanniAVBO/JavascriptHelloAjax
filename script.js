@@ -50,3 +50,33 @@ function resetText() {
 	//Imposta un testo vuoto dentro demo
 	demo.innerText = "";
 }
+
+//Funzione che prende in input la dimensione di una tabella (righe e colonne) e
+//	un array grande almeno rows*cols e copia tutto il suo
+//	contenuto dentro la tabella presente nella variabile table
+function composeTable(rows, cols, wordsArray) {
+	//Per ogni riga
+	for (let r = 0; r < rows; ++r) {
+		//Crea una riga e l'aggiunge nella tabella, come argomento
+		//	prende la posizione in cui si vuole inserire la riga
+		//	dove -1 significa in coda (crea una nuova riga in basso)
+		let row = table.insertRow(-1);
+		//Per ogni colonna
+		for (let c = 0; c < cols; ++c) {
+			//Crea una cella e l'aggiunge alla riga creata poco prima
+			//	la funzione prende come argomento la colonna in cui si
+			//	vuole inserire la cella, dove -1 significa alla fine
+			//	(aggiunge una nuova cella a destra)
+			let cell = row.insertCell(-1);
+			//Inserisce come contenuto della cella appena creata una
+			//	parola presa dall'array, la moltiplicazione serve
+			//	a saltare tutte le parole contenute nelle righe precedenti
+			//	mentre c è l'indice della riga corrente
+			cell.innerHTML = wordsArray[r*cols + c];
+			//Aggiunge un evento alla cella appena creata che richiama la
+			//	funzione scritta in precedenza che prendeva il testo della
+			//	cello e lo andava a copiare dentro info
+			cell.addEventListener("click", tdClicked);
+		}
+	}
+}
