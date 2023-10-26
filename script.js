@@ -3,6 +3,8 @@
 document.addEventListener("DOMContentLoaded", onAllLoaded);
 //Crea una variabile globale, quindi visibile in tutto il codice, di nome table
 var table;
+//Crea una variabile globale, in cui inserirà il paragrafo (p) con id demo
+var demo;
 //Definizione di una funzione che prende in input un argomento
 function onAllLoaded(event) {
 	//Stampa in console un messaggio
@@ -14,4 +16,7 @@ function onAllLoaded(event) {
 	let allTDs = table.getElementsByTagName('td');
 	//Stampa tutti i td
 	console.log(allTDs);
+	
+	//Salva il paragrafo con ID demo per fare in modo di poterlo modificare più avanti nel codice
+	demo = document.getElementById("demo");
 }
