@@ -78,8 +78,11 @@ function composeTable(rows, cols, wordsArray) {
 }
 
 //Funzione richiama al termine di una richiesta HTTP, in argomento viene
-//	passata la richiesta HTTP
-function requestDone(httpRequest) {
+//	passata l'evento che ha generato la chiamata a funzione
+function requestDone(eventDescription) {
+	//Estrae la richiesta HTTP dall'evento dall'evento, che in
+	//	questo caso rappresenta la sorgente stessa dell'evento
+	let httpRequest = eventDescription.srcElement;
 	//Se la richiesta è completata (stato 4) e la risposta ha restituito
 	//	il codice di stato 200 OK
 	if (httpRequest.readyState == 4 && httpRequest.status == 200) {
