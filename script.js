@@ -7,9 +7,9 @@ var table;
 var demo;
 
 //Crea una variabile costante, che non può essere alterata, per rappresentare il numero di righe
-const rows = 3;
+const rows = 5;
 //Crea una variabile costante, che non può essere alterata, per rappresentare il numero di colonne
-const cols = 3;
+const cols = 8;
 
 //Definizione di una funzione che prende in input un argomento
 function onAllLoaded(event) {
