@@ -26,6 +26,10 @@ function onAllLoaded(event) {
 	
 	//Ricerca il tasto resetButton e associa al click la funzione resetText
 	document.getElementById("resetButton").addEventListener("click", resetText);
+	
+	//Richiama la funzione che compone dinamicamente la tabella a partire dalle
+	//	dimensioni impostate all'inizio e dalle parole contenuto nell'array words
+	composeTable(rows, cols, words);
 }
 
 //Funzione da chiamare quando viene premuto su un TD
